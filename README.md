@@ -36,5 +36,6 @@ You can reach me at my work email for questions.
 
 ## Known issues
 - Since it's a straight sync, any other folders you've added to Everything will be removed. Will look at a workaround.
+- Only runs on startup, it's not a daemon watching the folder, so if you don't shut down your computer you'll need to manually run it to update after changing Newforma proejcts. 
 - It's kinda slow. This is because of the PowerShell module for reading LNK files. In the future I'd like to manually read the data from the binary file based on the [Shell Link binary file format](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/16cb4ca1-9339-4d0c-a68d-bf1d6cc0f943)
 - This is currently a manual install process. Would be nice to create a package on PIP so people can install that way; not a priority though since corporate environment often blocks pip.
