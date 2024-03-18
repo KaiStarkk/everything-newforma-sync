@@ -4,6 +4,8 @@
 ## Intro
 The purpose of this script is to synchronize your [Everything](https://www.voidtools.com/) configuration file with Newforma. This will update the Everything INI file so that it searches any folders in your Newforma "My Projects". In order to do this we rely on Newforma's function where it saves MS `.lnk` files to `This PC\My Newforma Projects`.
 
+![image](https://github.com/KaiStarkk/everything-newforma-sync/assets/1722064/9bdc3fe2-5794-4d5a-8a89-7797ce578f81)
+
 ## Functions
 The rough order of operations is as below:
 - This install script installs another python file in your startup directory (`~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup`).
