@@ -6,6 +6,10 @@ The purpose of this script is to synchronize your [Everything](https://www.voidt
 
 ![image](https://github.com/KaiStarkk/everything-newforma-sync/assets/1722064/9bdc3fe2-5794-4d5a-8a89-7797ce578f81)
 
+## Install
+Download this .py file and run it.
+You might need to [install Python first](https://www.python.org/downloads/) - it can be installed to `%APPDATA%` (administrative privileges not required).
+
 ## Functions
 The rough order of operations is as below:
 - This install script installs another python file in your startup directory (`~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup`).
@@ -34,3 +38,4 @@ You can reach me at my work email for questions.
 - Newforma doesn't remove links from this folder when removing projects, so old projects will need to be manually removed from the directory
 - Since it's a straight sync, any other folders you've added to Everything will be removed. The workaround is to create links to these folders in the Newforma directory. For the reason above, they won't be deleted so should persist.
 - It's kinda slow. This is because of the PowerShell module for reading LNK files. In the future I'd like to manually read the data from the binary file based on the [Shell Link binary file format](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/16cb4ca1-9339-4d0c-a68d-bf1d6cc0f943)
+- This is currently a manual install process. Would be nice to create a package on PIP so people can install that way; not a priority though since corporate environment often blocks pip.
