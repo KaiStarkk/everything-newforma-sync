@@ -35,7 +35,9 @@ Due to needing to build a config on first run, the installer also runs the scrip
 You can reach me at my work email for questions.
 
 ## Known issues
-- Since it's a straight sync, any other folders you've added to Everything will be removed. Will look at a workaround.
-- Only runs on startup, it's not a daemon watching the folder, so if you don't shut down your computer you'll need to manually run it to update after changing Newforma proejcts. 
+- Since it's a straight sync, any other folders you've added to Everything will be removed. There is a "prepend" flag in the config file for this purpose. It's a bit unwieldy as backslashes need to be escaped, e.g.
+    - ![image](https://github.com/KaiStarkk/everything-newforma-sync/assets/1722064/6ed293ee-a230-4c31-8061-9bb3c498b2d1)
+- No update feature currently. If we need to update the script, you'll have to delete the existing version installed at the startup directory 
+- Only runs on startup, it's not a daemon watching the folder, so if you don't shut down your computer you'll need to manually run it to update after changing Newforma proejcts.
 - It's kinda slow. This is because of the PowerShell module for reading LNK files. In the future I'd like to manually read the data from the binary file based on the [Shell Link binary file format](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/16cb4ca1-9339-4d0c-a68d-bf1d6cc0f943)
 - This is currently a manual install process. Would be nice to create a package on PIP so people can install that way; not a priority though since corporate environment often blocks pip.
