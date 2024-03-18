@@ -35,7 +35,6 @@ Due to needing to build a config on first run, the installer also runs the scrip
 You can reach me at my work email for questions.
 
 ## Known issues
-- Newforma doesn't remove links from this folder when removing projects, so old projects will need to be manually removed from the directory
-- Since it's a straight sync, any other folders you've added to Everything will be removed. The workaround is to create links to these folders in the Newforma directory. For the reason above, they won't be deleted so should persist.
+- Since it's a straight sync, any other folders you've added to Everything will be removed. Will look at a workaround.
 - It's kinda slow. This is because of the PowerShell module for reading LNK files. In the future I'd like to manually read the data from the binary file based on the [Shell Link binary file format](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/16cb4ca1-9339-4d0c-a68d-bf1d6cc0f943)
 - This is currently a manual install process. Would be nice to create a package on PIP so people can install that way; not a priority though since corporate environment often blocks pip.
