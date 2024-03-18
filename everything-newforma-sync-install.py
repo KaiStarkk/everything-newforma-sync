@@ -12,6 +12,7 @@ import re
 from datetime import datetime
 
 saved_ini_file_path = None
+prepend = ""
 debug = True
 
 #-- Step 1 --
@@ -29,12 +30,17 @@ def startup():
             return False
 
 def read_config():
+    global prepend
     config_file_path = get_config_file_path()
     if os.path.exists(config_file_path):
         print("Found config, reading")
         with open(config_file_path, "r") as config_file:
             config = json.load(config_file)
         print("Found saved INI file path:", config.get("ini_file_path"))
+        if config.get("prepend"):
+            prepend = config.get("prepend")
+            print(f"Prepend found:{prepend}")
+            prepend = prepend + ","
         return config.get("ini_file_path")
     else:
         print("No config, continuing")
@@ -65,7 +71,7 @@ def save_config(ini_file_path):
 def get_config_file_path():
     print("Checking for config file")
     appdata_path = os.getenv('APPDATA')
-    return os.path.join(appdata_path, "everything-sync-config.json")
+    return os.path.join(appdata_path, "everything-newforma-sync-config.json")
 
 #-- Step 2 --
 
@@ -160,7 +166,7 @@ if __name__ == "__main__":
     print("Step 3 -- Modifying data")
     copy_file_to_backup(saved_ini_file_path)
     regex = re.compile(r'^folders=.*$', re.IGNORECASE)
-    replace_lines(saved_ini_file_path, regex, "folders="+targets)
+    replace_lines(saved_ini_file_path, regex, f"folders={prepend}{targets}")
     print("Done")
 '''
 
