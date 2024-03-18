@@ -35,6 +35,7 @@ Due to needing to build a config on first run, the installer also runs the scrip
 You can reach me at my work email for questions.
 
 ## Known issues
+- Everything needs to be closed while this runs. If you have Everything in your startup folder, this creates a race condition. The TODO: is for me to make this script execute Everything when it's done, then Everything itself can be removed from startup.
 - Since it's a straight sync, any other folders you've added to Everything will be removed. There is a "prepend" flag in the config file for this purpose. It's a bit unwieldy as backslashes need to be escaped, e.g.
     - ![image](https://github.com/KaiStarkk/everything-newforma-sync/assets/1722064/6ed293ee-a230-4c31-8061-9bb3c498b2d1)
 - No update feature currently. If we need to update the script, you'll have to delete the existing version installed at the startup directory 
